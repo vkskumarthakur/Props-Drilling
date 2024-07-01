@@ -1,12 +1,12 @@
 import React from 'react'
+import { UserConsumer } from './UserContext';
 
 const Navigation = (props) => {
     console.log(props);
   return (
-    <div>
-        This is {props.userDetails.name} <br/>
-        This is {props.userDetails.address}
-    </div>
+    <UserConsumer>
+      {(user)=><h1>My name is {user.name} and i am from {user.address}</h1>}
+    </UserConsumer>
   )
 }
 

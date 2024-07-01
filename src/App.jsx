@@ -2,13 +2,16 @@ import { useState } from 'react'
 
 import './App.css'
 import Header from './components/Header'
+import { UserProvider } from './components/UserContext'
 
 function App() {
-  const user = {name:"vikas",address:"delhi"}
+  const user = {name:"Vikas",address:"Delhi"}
 
   return (
     <>
-     <Header userDetails={user}/>
+    <UserProvider value={user}>
+     <Header/>
+    </UserProvider>
     </>
   )
 }
